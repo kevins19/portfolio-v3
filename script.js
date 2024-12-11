@@ -25,19 +25,19 @@ You can also learn more about me through the links below, or contact me at [ksha
         gsap.to(char, {
             y: 0,
             opacity: 1,
-            duration: 0.3,
-            delay: index * 0.05,
+            duration: 0.5,
+            delay: 0.2 + index * 0.1,
             ease: 'power1.out'
         });
     });
 
     descriptionText.textContent = text;
-    gsap.set(descriptionText, { opacity: 0, y: 50 });
+    gsap.set(descriptionText, { opacity: 0, x: -10 }); 
     gsap.to(descriptionText, {
-        duration: 1,
+        duration: 1.3,
         opacity: 1,
-        y: 0,
-        delay: 0.3,
+        x: 0, 
+        delay: 0.4,
         ease: 'power2.out'
     });
 
@@ -47,7 +47,7 @@ You can also learn more about me through the links below, or contact me at [ksha
         gsap.to(icon, {
             y: 0,
             opacity: 1,
-            duration: 0.3,
+            duration: 0.4,
             delay: 0.6 + (index * 0.1),
             ease: 'power1.out'
         });
