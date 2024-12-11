@@ -1,3 +1,5 @@
+// src: https://github.com/yomotsu/ScrambleText/tree/master
+
 const ATTR_IDLING  = 'data-scramble-text-idling';
 const ATTR_RUNNING = 'data-scramble-text-running';
 
@@ -14,7 +16,7 @@ class ScrambleText {
 		this._anim = anim.bind( this );
 
 		this.el = el;
-		this.timeOffset = option.timeOffset || 120;
+		this.timeOffset = option.timeOffset || 80;
 		this.fps = option.fps || 50;
         this.chars = option.chars || [
 			'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
