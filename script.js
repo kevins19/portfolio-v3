@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const nameText = document.getElementById('nameText');
+    // const nameText = document.getElementById('nameText');
+    const name = document.getElementById('text1');
     const descriptionText = document.getElementById('descriptionText');
     const socialIcons = document.getElementById('socialIcons');
     const socialIconLinks = socialIcons.querySelectorAll('a');
@@ -12,24 +13,34 @@ This summer, I will be interning at Citadel as a Quantitative Developer intern i
 
 You can also learn more about me through the links below, or contact me at [kshan9@gatech.edu].`;
 
-    const name = "Kevin Shan";
-    nameText.innerHTML = name.split('').map(char => 
-        `<span class="name-char">${char === ' ' ? '&nbsp;' : char}</span>`
-    ).join('');
+    // const name = "Kevin Shan";
+    // nameText.innerHTML = name.split('').map(char => 
+    //     `<span class="name-char">${char === ' ' ? '&nbsp;' : char}</span>`
+    // ).join('');
 
-    const nameChars = document.querySelectorAll('.name-char');
+    // const nameChars = document.querySelectorAll('.name-char');
     
-    gsap.set(nameChars, { opacity: 0, y: 20 });
+    // gsap.set(nameChars, { opacity: 0, y: 20 });
     
-    nameChars.forEach((char, index) => {
-        gsap.to(char, {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            delay: 0.2 + index * 0.1,
-            ease: 'power1.out'
-        });
+    // nameChars.forEach((char, index) => {
+    //     gsap.to(char, {
+    //         y: 0,
+    //         opacity: 1,
+    //         duration: 0.5,
+    //         delay: 0.2 + index * 0.1,
+    //         ease: 'power1.out'
+    //     });
+    // });
+
+    gsap.set(name, { opacity: 0, y: 0 });
+    gsap.to(name, {
+        duration: 2,
+        opacity: 1,
+        x: 0, 
+        delay: 0.2,
+        ease: 'power2.out'
     });
+    const nameChars = document.querySelectorAll('.name-char');
 
     descriptionText.textContent = text;
     gsap.set(descriptionText, { opacity: 0, x: -10 }); 
@@ -47,9 +58,10 @@ You can also learn more about me through the links below, or contact me at [ksha
         gsap.to(icon, {
             y: 0,
             opacity: 1,
-            duration: 0.4,
+            duration: .5,
             delay: 0.6 + (index * 0.1),
-            ease: 'power1.out'
+            ease: 'power2.out'
         });
     });
+    
 });
