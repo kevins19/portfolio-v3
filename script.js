@@ -1,37 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded successfully.");
+document.addEventListener('DOMContentLoaded', () => {
+    const nameText = document.getElementById('nameText');
+    const descriptionText = document.getElementById('descriptionText');
+    const socialIcons = document.getElementById('socialIcons');
+    const socialIconLinks = socialIcons.querySelectorAll('a');
 
-    const chars = document.querySelectorAll(".name .char:not(.space)");
-    const description = document.querySelector(".description");
-    const socialIcons = document.querySelectorAll(".social-icons a");
+    const text = `Hello! My name is Kevin--I'm an undergraduate Computer Science student at Georgia Tech. I'm broadly interested in systems programming, computer architecture, and high performance computing.
 
-    if (typeof gsap === "undefined") {
-        console.error("GSAP is not loaded.");
-        return;
-    }
+I've been doing competitive programming since high school, and have represented Georgia Tech in the ACM International Collegiate Programming Contest for the last few years. I am also currently researching CXL-memory pooling architectures for irregular graph applications as an undergrade researcher at Georgia Tech.
 
-    const tl = gsap.timeline({ delay: 0.5 });
+This summer, I will be interning at Citadel as a Quantitative Developer intern in Chicago, where I will be working on the Algo/Execution team in the Global Quantitative Strategies branch of Citadel. 
 
-    tl.to(chars, {
-        duration: 0.6,
-        y: "0%",
-        opacity: 1,
-        ease: "power2.out",
-        stagger: 0.05,
+You can also learn more about me through the links below, or contact me at [kshan9@gatech.edu].`;
+
+    const name = "Kevin Shan";
+    nameText.innerHTML = name.split('').map(char => 
+        `<span class="name-char">${char === ' ' ? '&nbsp;' : char}</span>`
+    ).join('');
+
+    const nameChars = document.querySelectorAll('.name-char');
+    
+    gsap.set(nameChars, { opacity: 0, y: 20 });
+    
+    nameChars.forEach((char, index) => {
+        gsap.to(char, {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            delay: index * 0.05,
+            ease: 'power1.out'
+        });
     });
 
-    tl.to(description, {
-        duration: 0.8,
-        y: "0px",
+    descriptionText.textContent = text;
+    gsap.set(descriptionText, { opacity: 0, y: 50 });
+    gsap.to(descriptionText, {
+        duration: 1,
         opacity: 1,
-        ease: "power2.out",
-    }, "-=0.8");
+        y: 0,
+        delay: 0.3,
+        ease: 'power2.out'
+    });
 
-    tl.to(socialIcons, {
-        duration: 0.8,
-        y: "0px",
-        opacity: 1,
-        ease: "power2.out",
-        stagger: 0.1,
-    }, "-=0.8");
+    gsap.set(socialIconLinks, { opacity: 0, y: 20 });
+    
+    socialIconLinks.forEach((icon, index) => {
+        gsap.to(icon, {
+            y: 0,
+            opacity: 1,
+            duration: 0.3,
+            delay: 0.6 + (index * 0.1),
+            ease: 'power1.out'
+        });
+    });
 });
