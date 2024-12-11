@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const text = `Hello! My name is Kevin--I'm an undergraduate Computer Science student at Georgia Tech. I'm broadly interested in systems programming, computer architecture, and high performance computing.
 
-I've been doing competitive programming since high school, and have represented Georgia Tech in the ACM International Collegiate Programming Contest for the last few years. I am also currently researching CXL-memory pooling architectures for irregular graph applications as an undergrade researcher at Georgia Tech.
+I've been doing competitive programming since high school, and have represented Georgia Tech in the ACM International Collegiate Programming Contest for the last few years. I am also currently researching CXL-memory pooling architectures for irregular graph applications as an undergraduate researcher at Georgia Tech.
 
 This summer, I will be interning at Citadel as a Quantitative Developer intern in Chicago, where I will be working on the Algo/Execution team in the Global Quantitative Strategies branch of Citadel. 
 
