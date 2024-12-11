@@ -15,7 +15,7 @@
 body {
     background-color: #000;
     color: #fff;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Azeret Mono', monospace;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@ body {
 
 .name {
     font-size: 2em;
-    font-weight: 700;
+    font-weight: 500;
     display: flex;
     flex-wrap: wrap;
 }
